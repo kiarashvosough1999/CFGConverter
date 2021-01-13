@@ -13,6 +13,10 @@ class CodeEditor(QPlainTextEdit):
         self.connect_signals_to_slots()
         self.updateLineNumberAreaWidth(0)
 
+    def is_input_available(self):
+        if self.toPlainText():
+            return True
+        return False
     def connect_signals_to_slots(self):
         self.blockCountChanged.connect(self.updateLineNumberAreaWidth)
         self.updateRequest.connect(self.updateLineNumberArea)
