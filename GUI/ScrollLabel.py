@@ -1,8 +1,8 @@
 from PyQt5.QtWidgets import QScrollArea, QWidget, QVBoxLayout, QLabel
 from PyQt5.QtCore import Qt
 
-class ScrollLabel(QScrollArea):
 
+class ScrollLabel(QScrollArea):
 
     def __init__(self, *args, **kwargs):
         QScrollArea.__init__(self, *args, **kwargs)
@@ -25,3 +25,6 @@ class ScrollLabel(QScrollArea):
     def setText(self, text):
         self.label.setText('')
         self.label.setText(text)
+
+    def get_text(self):
+        return self.label.text()
